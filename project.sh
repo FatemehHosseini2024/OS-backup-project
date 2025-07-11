@@ -15,3 +15,5 @@ duration=$((end_time - start_time))
 filesize=$(du -m "$output_file" | cut -f1)
 log_file="backup.log"
 now=$(date +"%Y-%m-%d %H:%M:%S")
+if [ $status -eq 0 ] then
+echo "[$now] SUCCESS: Backup created at $output_file, Size: ${filesize}MB, Duration: ${duration}s" >> "$log_file"
