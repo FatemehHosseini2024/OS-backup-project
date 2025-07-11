@@ -11,3 +11,5 @@ start_time=$(date +%s)
 tar -czf "$output_file" -T backup.conf
 status=$?
 end_time=$(date +%s)
+duration=$((end_time - start_time))
+filesize=$(du -m "$output_file" | cut -f1)
