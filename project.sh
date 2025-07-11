@@ -20,3 +20,5 @@ if [ $status -eq 0 ]; then
 else 
      echo "[$now] ERROR: Backup failed, Duration: ${duration}ns" >> "$log_file"
 fi 
+days_to_keep=7
+find "$address2" -name "*.tar.gz" -type f -mtime +$days_to_keep -exec rm {} \;
