@@ -13,3 +13,5 @@ status=$?
 end_time=$(date +%s)
 duration=$((end_time - start_time))
 filesize=$(du -m "$output_file" | cut -f1)
+log_file="backup.log"
+now=$(date +"%Y-%m-%d %H:%M:%S")
